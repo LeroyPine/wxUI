@@ -1,0 +1,21 @@
+<view class='piece'>
+ <view class='case-piece'>
+   <image class='detail-image' src='{{repairData.photo}}'></image>
+     <text>
+       店铺名称:{{repairData.name}} <br/>
+       店铺简介:{{repairData.description}}<br/>
+       店铺地址:{{repairData.address}}
+      </text>
+      <scroll-view  scroll-y style="height: 650rpx;">
+      <view class='case-comment' wx:for="{{comment}}" wx:for-index = "id" wx:for-item="commentName" >
+         <text class='text-style'>
+            评论人:{{commentName.username}}<br/>
+            评论内容:{{commentName.comment}}<br/>
+            评论日期:{{commentName.createDate}}
+          </text>
+     </view>
+     </scroll-view>
+  </view>
+  <button class='xy' bindtap='jumpComBtn' data-set='{{repairData}}' >立即评论</button>
+  <button class='yy' bindtap='jumpBtn' data-set='{{repairData}}' >预约维修</button>
+</view>

@@ -1,0 +1,21 @@
+<view class='piece'>
+  <view class='case-piece'>
+    <text class='title-style'>店铺评论</text>
+
+    <form bindsubmit="formSubmit">
+      <input type='text' style='display:none' name="shopId" value='{{shopId}}'></input>
+      <view class="inputView">
+        <!--这个是输入框-->
+        <input class="input" name="repairName" value='{{repairName}}' disabled='true' type="text" placeholder-style="color: gray" />
+      </view>
+      <view class="inputView">
+        <!--这个是输入框-->
+        <textarea name="comment" placeholder="请输入评论内容" placeholder-style="color: gray" >
+        
+        </textarea>
+      </view>
+
+      <button class='yy' form-type='submit'>确认提交</button>
+    </form>
+  </view>
+</view>

@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/auth/auth",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/suggest/suggest",
+    "pages/mine/mine",
+    "pages/about/about",
+    "pages/detail/detail",
+    "pages/appointment/appointment",
+    "pages/success/success",
+    "pages/comment/comment"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "教学辅助",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "pages/images/index.png",
+        "selectedIconPath": "pages/images/index.png"
+      },
+      {
+        "pagePath": "pages/suggest/suggest",
+        "text": "考试",
+        "iconPath": "pages/images/suggest.png",
+        "selectedIconPath": "pages/images/suggest.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "pages/images/mine.png",
+        "selectedIconPath": "pages/images/mine.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于",
+        "iconPath": "pages/images/about.png",
+        "selectedIconPath": "pages/images/about.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

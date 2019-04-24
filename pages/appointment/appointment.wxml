@@ -1,0 +1,29 @@
+<view class='piece'>
+  <view class='case-piece'>
+    <text class='title-style'>预约维修单清单</text>
+
+    <form bindsubmit="formSubmit">
+      <input type='text' style='display:none' name="shopId" value='{{shopId}}'></input>
+      <view class="inputView">
+        <!--这个是输入框-->
+        <input class="input" name="repairName" value='{{repairName}}' disabled='true' type="text" placeholder-style="color: gray" />
+      </view>
+      <view class="inputView">
+        <!--这个是输入框-->
+        <input class="input" name="electName" type="text" placeholder="预约维修家电" placeholder-style="color: gray" />
+      </view>
+      <view class="inputView">
+        <input class="input" name="age" type='text' placeholder="家电使用年限" placeholder-style="color: gray" />
+      </view>
+      <view class="inputView">
+        <input class="input" name="pheno" type='text' placeholder="出现的故障" placeholder-style="color: gray" />
+      </view>
+
+      <view class="inputView">
+        <input class="input" name="date" type='text' placeholder="选择日期" placeholder-style="color: gray" />
+      </view>
+
+      <button class='yy' form-type='submit'>确认提交</button>
+    </form>
+  </view>
+</view>

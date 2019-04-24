@@ -1,0 +1,53 @@
+<view class='detail-bootom-box'>
+  <view class='user'>
+    <view>
+      <image src='{{photo}}'></image>
+    </view>
+    <view>
+      <text class='nickname'>{{username}}</text>
+    </view>
+  </view>
+  <view class="tabNav">
+    <view wx:for="{{navTab}}" wx:key="index" data-idx="{{index}}" bindtap="currentTab" class="{{currentTab==index ? 'cur' : ''}}">
+      <text>{{item}}</text>
+    </view>
+  </view>
+
+
+  <view class='detail-box'>
+    <scroll-view scroll-y style="height: 700rpx;">
+      <view hidden='{{currentTab !=0}}'>
+        <view class='case-item' wx:for="{{appoindata}}" wx:for-index="id" wx:for-item="itemName">
+
+          <view class="divLine"></view>
+          <text class='text-style'>
+            预约单编号:{{itemName.id}}
+      维修店名称:{{itemName.repairName}}
+     电器名称:{{itemName.electName}}<br/>
+     使用年限:{{itemName.age}}<br/>
+     故障原因:{{itemName.pheno}}<br/>
+     预约状态:{{itemName.state}}</text>
+          <button bindtap='delBtn' data-set='{{itemName.id}}'>
+            取消订单
+          </button>
+
+          <view class="divLine"></view>
+        </view>
+
+      </view>
+      <view hidden='{{currentTab !=1}}'>
+        <view class='case-item' wx:for="{{complaindata}}" wx:for-index="id" wx:for-item="itemName">
+
+          <view class="divLine"></view>
+          <text class='text-style'>
+          预约单编号:{{itemName.appointmentId}}
+      维修店名称:{{itemName.repairShopName}}
+     投诉内容:{{itemName.content}}<br/>
+     投诉日期:{{itemName.createDate}}</text>
+
+          <view class="divLine"></view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,16 @@
+<form bindsubmit="formSubmit">
+  <view class='case-list'>
+    <text class='title-style'>考试</text>
+
+    <view wx:for="{{examData}}" wx:for-index="idx" wx:for-item="exam">
+     {{idx+1}}、{{exam.choice.title}}   
+     （<input class="input" id='{{exam.choice.id}}' bindinput="answer" type="text" />）
+         <view wx:for="{{exam.optionList}}" wx:for-index="idxs" wx:for-item="optio">
+          <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+          {{idxs+1}}、{{optio.content}}
+        </view> 
+        <br/>
+    </view>
+   <button class='yy' form-type='submit'>确认提交</button>
+  </view>
+</form>

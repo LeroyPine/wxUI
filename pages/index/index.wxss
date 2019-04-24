@@ -1,0 +1,103 @@
+.title {
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.top{
+  float:left;
+}
+.top_description{
+  width: 100%;
+}
+
+.top_description_left {
+  width: 80px;
+  height: 80px;
+  margin-top: 5px;
+  margin-left:5px; 
+  float: left;
+}
+
+.top_description_left image {
+  width: 60px;
+  height: 60px;
+  border-radius: 35px;
+  border: 0.5px solid;
+}
+
+.top_description_right{
+  width: 380rpx;
+  height:60px;
+  border: 1 solid;
+  /*background: red;*/
+  float: left;
+  margin-top: 5px;
+}
+
+.top_description_moreRight{
+  float: left;
+  height: 60px;
+  margin-top: 5px;
+  /* background: bisque; */
+  font-size: 28rpx;
+  line-height: 60px;
+}
+.clearFolat{
+  clear:both
+}
+
+.divLine{
+ background: #E0E3DA;
+ width: 100%;
+ height: 5rpx;
+}
+
+.tabNav{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #fff;
+  display: flex;
+  padding: 10px 10px;
+ 
+}
+
+.tabNav> view text {
+  padding: 0 80rpx;
+  height: 75rpx;
+  display: inline-block;
+}
+
+.tabNav .cur text {
+  border-bottom: 5rpx solid #f96d36;
+  color: #000;
+}
+
+.chinesePage{
+  margin-top:70rpx; 
+}
+
+.chinesePage button{
+  margin-top: 35rpx;
+  background: #67a4eb;
+  width: 40%;
+}
+.mathPage{
+  margin-top:70rpx; 
+}
+
+.mathPage button{
+  margin-top: 35rpx;
+  background: #67a4eb;
+  width: 40%;
+}
+.englishPage{
+  margin-top:70rpx; 
+}
+
+.englishPage button{
+  margin-top: 35rpx;
+  background: #67a4eb;
+  width: 40%;
+}

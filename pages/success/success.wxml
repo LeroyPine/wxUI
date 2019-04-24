@@ -1,0 +1,1 @@
+<button bindtap="btnclick">提交成功,点击返回首页</button>
