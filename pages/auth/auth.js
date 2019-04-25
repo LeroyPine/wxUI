@@ -37,7 +37,7 @@ Page({
           console.log(loginCode)
 
           wx.request({
-            url: 'http://localhost:8899/wx/login', //接口地址
+            url: 'http://localhost:8666/wx/login', //接口地址
             data: {
               code: loginCode,
               userNick: e.detail.userInfo.nickName,
@@ -49,7 +49,7 @@ Page({
             success: function(res) {
               app.globalData.oid = res.data.openid
               wx.request({
-                url: 'http://localhost:8899/user/info/add',
+                url: 'http://localhost:8666/user/info/add',
                 data: {
                   openId: getApp().globalData.oid,
                   nickName: e.detail.userInfo.nickName,
@@ -95,7 +95,7 @@ Page({
   //获取用户信息接口
   queryUsreInfo: function() {
     wx.request({
-      url: 'http://localhost:8899/user/info/userInfo',
+      url: 'http://localhost:8666/user/info/userInfo',
       data: {
         openid: app.globalData.openid
       },

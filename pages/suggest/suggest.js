@@ -3,8 +3,10 @@
 const app = getApp()
 Page({
   data: {
+    paperId:1,
     examData:null,
     examSize:null,
+    answers:[]
   },
   onLoad: function (options){
     var that = this
@@ -22,36 +24,55 @@ Page({
       }
     })
   },
-  formSubmit(e) {
-    console.log(e)
+  answer:function(e){
+    let that = this;
     console.log(e.detail.value)
-    var that = this
-    console.log(that.data.examSize)
-    let exSize = that.data.examSize
-    var answers = [];
-    for (let i = 1; i <= exSize;i++){
-       console.log((e.detail.value.answer,i))
-
-    }
+    var answers = that.data.answers;
     console.log(answers)
-    /* wx.request({
-      url: 'http://localhost:8899/complaint/save',
+    answers.push(e.detail.value)
+    console.log(answers);
+  }
+  ,
+  formSubmit(e) {
+    let that = this;
+    console.log(that.data.answers)
+    var answers = that.data.answers
+    console.log(answers)
+    var userId = app.globalData.userInfo.id
+    var paperId = that.data.paperId
+    console.log(userId)
+    console.log(paperId)
+    wx.request({
+      url: 'http://localhost:8666/user/score/save',
       header: {
-        'content-type': 'application/json' //默认值
+        'content-type': 'application/json'
       },
       method: 'post',
       data: {
-        repairShopId: shopId,
-        userName: username,
-        content: complain,
+        paperId: userId,
+        userId: userId,
+        answers: answers,
       },
       success(res) {
-        wx.navigateTo({
-          url: '../success/success',
+        console.log(res.data)
+        var score = res.data
+        wx.showModal({
+          title: '你好',
+          content: '你的得分为:' + score,
+          success: function (res) {
+            if (res.confirm) {
+              wx.switchTab({
+                url: '../index/index'
+              })
+            } else if (res.cancel) {
+              wx.switchTab({
+                url: '../index/index'
+              })
+            }
+          }
         })
-
       }
-    })   */
+    })   
   }
 })
  

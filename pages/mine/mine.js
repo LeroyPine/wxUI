@@ -3,7 +3,7 @@
 const app = getApp()
 Page({
   data: {
-    navTab: ['预约单', '投诉单'],
+    navTab: ['打卡', '考试'],
     currentTab: 0,
     sendList: [],
     appoindata: null,

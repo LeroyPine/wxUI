@@ -23,7 +23,7 @@
 }
 
 .tabNav> view text {
-  padding: 0 15rpx;
+  padding: 0 5rpx;
   height: 75rpx;
   display: inline-block;
 }
