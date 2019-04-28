@@ -3,10 +3,10 @@
 const app = getApp()
 Page({
   data: {
-    navTab: ['打卡', '考试'],
+    navTab: ['打卡记录', '考试记录'],
     currentTab: 0,
     sendList: [],
-    appoindata: null,
+    records: null,
     complaindata:null,
     photo: null,
     username:null
@@ -23,22 +23,22 @@ Page({
   getData: function () {
     var that = this
     var type =  that.data.currentTab
-    var username = app.globalData.userInfo.nickName
+    var userId = app.globalData.userInfo.id
     console.log(type)
     if(type == 0){
       wx.request({
-        url: 'http://localhost:8899/appointment/list?userName=' + username,
+        url: 'http://172.20.10.10:8666/check/record/records?userId=' + userId,
         method: 'post',
         success(res) {
           console.log(res)
           that.setData({
-            appoindata: res.data,
+            records: res.data,
           })
         }
       })
     }else{
       wx.request({
-        url: 'http://localhost:8899/complaint/list?userName=' + username,
+        url: 'http://172.20.10.10:8666/user/score/userScoreList?userId=' + userId,
         method: 'post',
         success(res) {
           console.log(res)
@@ -56,28 +56,15 @@ Page({
       photo: app.globalData.userInfo.avatarUrl,
       username:app.globalData.userInfo.nickName
     })
-    var username = app.globalData.userInfo.nickName
+    var userId = app.globalData.userInfo.id
     wx.request({
-      url: 'http://localhost:8899/appointment/list?userName=' + username,
+      url: 'http://172.20.10.10:8666/check/record/records?userId=' + userId,
       method: 'post',
       success(res) {
         console.log(res)
         that.setData({
-          appoindata: res.data,
+          records: res.data,
         })
-      }
-    })
-
-  },
-  delBtn:function(e){
-    var that = this
-    var item = e.currentTarget.dataset.set;
-    console.log(item)
-    wx.request({
-      url: 'http://localhost:8899/appointment/del?id=' + item,
-      method: 'post',
-      success(res) {
-        that.onLoad()
       }
     })
 

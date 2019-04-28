@@ -6,10 +6,7 @@
     "pages/suggest/suggest",
     "pages/mine/mine",
     "pages/about/about",
-    "pages/detail/detail",
-    "pages/appointment/appointment",
-    "pages/success/success",
-    "pages/comment/comment"
+    "pages/success/success"
   ],
   "window": {
     "backgroundTextStyle": "light",

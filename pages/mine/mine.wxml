@@ -12,39 +12,31 @@
       <text>{{item}}</text>
     </view>
   </view>
-
-
   <view class='detail-box'>
-    <scroll-view scroll-y style="height: 700rpx;">
+    <scroll-view scroll-y style="height:900rpx">
       <view hidden='{{currentTab !=0}}'>
-        <view class='case-item' wx:for="{{appoindata}}" wx:for-index="id" wx:for-item="itemName">
+        <view class='case-item' wx:for="{{records}}" wx:for-index="id" wx:for-item="itemName">
 
           <view class="divLine"></view>
           <text class='text-style'>
-            预约单编号:{{itemName.id}}
-      维修店名称:{{itemName.repairName}}
-     电器名称:{{itemName.electName}}<br/>
-     使用年限:{{itemName.age}}<br/>
-     故障原因:{{itemName.pheno}}<br/>
-     预约状态:{{itemName.state}}</text>
-          <button bindtap='delBtn' data-set='{{itemName.id}}'>
-            取消订单
-          </button>
-
+            打卡编号:{{itemName.id}}
+            打卡科目:{{itemName.cwId == 1 ? '语文' : itemName.cwId == 2 ? '数学' : '英语'  }}                     
+            打卡时间:{{itemName.crateDate}}<br/>
+            签到状态:{{itemName.startState == 1 ? '已签到' : '未签到'}}<br/>
+            签退状态:{{itemName.endState == 1 ? '已签到' : '未签到'}}<br/>
+            </text>
           <view class="divLine"></view>
         </view>
 
       </view>
       <view hidden='{{currentTab !=1}}'>
         <view class='case-item' wx:for="{{complaindata}}" wx:for-index="id" wx:for-item="itemName">
-
           <view class="divLine"></view>
           <text class='text-style'>
-          预约单编号:{{itemName.appointmentId}}
-      维修店名称:{{itemName.repairShopName}}
-     投诉内容:{{itemName.content}}<br/>
-     投诉日期:{{itemName.createDate}}</text>
-
+          考试编号:{{itemName.id}}
+          试卷名称:{{itemName.paperName}}
+          试卷得分:{{itemName.score}}<br/>
+          考试时间:{{itemName.completionTime}}</text>
           <view class="divLine"></view>
         </view>
       </view>

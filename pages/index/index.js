@@ -22,7 +22,7 @@ Page({
     var cuurentDate = util.executeDate();
     console.log(app.globalData.userInfo.id)
     wx.request({
-      url: 'http://localhost:8666/check/record/dataStat',
+      url: 'http://172.20.10.10:8666/check/record/dataStat',
       method: 'get',
       data: {
         userId: app.globalData.userInfo.id,
@@ -65,7 +65,7 @@ Page({
     var cwId = e.currentTarget.dataset.cwid;
     console.log(cwId)
     wx.request({
-      url: 'http://localhost:8666/check/record/save',
+      url: 'http://172.20.10.10:8666/check/record/save',
       method: 'get',
       data: {
         userId: app.globalData.userInfo.id,

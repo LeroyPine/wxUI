@@ -3,26 +3,39 @@
 const app = getApp()
 Page({
   data: {
-    paperId:1,
+    paperId:null,
     examData:null,
     examSize:null,
     answers:[]
   },
   onLoad: function (options){
+
     var that = this
     console.log(app.globalData.userInfo.nickName)
     var username = app.globalData.userInfo.nickName;
+    var paperId = that.data.paperId
     wx.request({
-      url: 'http://localhost:8666/paper/detailForWX?paperId=1',
-      method:'get',
-      success(res){
+      url: 'http://localhost:8666/paper/getEnable',
+      method: 'get',
+      success(res) {
         console.log(res)
         that.setData({
-          examData : res.data,
-          examSize : res.data.length 
+          paperId: res.data
+        })
+        wx.request({
+          url: 'http://localhost:8666/paper/detailForWX?paperId='+that.data.paperId,
+          method: 'get',
+          success(res) {
+            console.log(res)
+            that.setData({
+              examData: res.data,
+              examSize: res.data.length
+            })
+          }
         })
       }
     })
+    
   },
   answer:function(e){
     let that = this;
@@ -49,7 +62,7 @@ Page({
       },
       method: 'post',
       data: {
-        paperId: userId,
+        paperId: paperId,
         userId: userId,
         answers: answers,
       },
